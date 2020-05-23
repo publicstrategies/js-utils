@@ -10,10 +10,10 @@
 property shared between them.</p>
 
 
-| Param   | Type                           | Description                                                           |
-| ------- | ------------------------------ | --------------------------------------------------------------------- |
-| array   | <code>Array.&lt;any&gt;</code> | <p>The array of objects with a shared shallow or nested property.</p> |
-| ...keys | <code>string</code>            | <p>The property accessor(s) for the objects in the array.</p>         |
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array.&lt;any&gt;</code> | <p>The array of objects with a shared shallow or nested property.</p> |
+| ...keys | <code>string</code> | <p>The property accessor(s) for the objects in the array.</p> |
 
 **Example**  
 ```ts
