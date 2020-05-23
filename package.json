@@ -1,7 +1,7 @@
 {
   "name": "@psdevs/js-utils",
   "version": "1.0.0",
-  "description": "Some handy javascript utilities we use.",
+  "description": "Some handy javascript utilities we use 👨‍💻👩‍💻",
   "main": "index.js",
   "files": [
     "dist"
