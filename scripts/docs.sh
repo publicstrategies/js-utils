@@ -1,6 +1,8 @@
 #!/bin/bash
 
-jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md
+# Assumes that the function kinds are all global, but that's not the case.
+# https://github.com/jsdoc2md/jsdoc-to-markdown/issues/181 
+npx jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md
 
 BADGE_TRAVIS="[![Build Status](https://travis-ci.com/publicstrategies/js-utils.svg?branch=master)](https://travis-ci.com/publicstrategies/js-utils)"
 BADGE_COVERALLS="[![Coverage Status](https://coveralls.io/repos/github/publicstrategies/js-utils/badge.svg?branch=master)](https://coveralls.io/github/publicstrategies/js-utils?branch=master)"

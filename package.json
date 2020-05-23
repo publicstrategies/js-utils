@@ -8,13 +8,13 @@
     "dist"
   ],
   "scripts": {
-    "start": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js",
+    "build-docs": "bash scripts/docs.sh",
     "test": "jest",
     "test-ci": "jest --coverage && coveralls < coverage/lcov.info",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:watch:coverage": "jest --watch --coverage",
-    "build-docs": "bash scripts/docs.sh",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit",
     "validate": "npm run lint && npm run tsc && npm run test",
