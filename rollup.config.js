@@ -8,8 +8,8 @@ const config = {
   plugins: [
     typescript({
       tsconfigOverride: {
-        include: ['src/**/*.ts'],
         exclude: ['src/**/*.spec.ts'],
+        include: ['src/**/*.ts'],
         compilerOptions: {
           declaration: true,
         },
