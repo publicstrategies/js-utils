@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "rollup --config rollup.config.js --watch",
-    "test": "jest --coverage && coveralls < coverage/lcov.info",
+    "test": "jest",
+    "test-ci": "jest --coverage && coveralls < coverage/lcov.info",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:watch:coverage": "jest --watch --coverage",
@@ -43,7 +44,8 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "src/**/*.ts"
+      "<rootDir>/src/**/*.ts",
+      "!<rootDir>/src/index.ts"
     ]
   },
   "devDependencies": {
