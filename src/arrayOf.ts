@@ -11,10 +11,14 @@ const byKey = <T extends unknown, K extends keyof T>(key: K) => (
  * @returns {any[]}
  * @example
  * ```ts
- * const data = [{ name: "John", id: 1 }, { name: "Jane", id: 2 }];
+ * const data = [
+ *   { complex: { value: 'x' }, id: 1, name: 'John' },
+ *   { complex: { value: 'y' }, id: 2, name: 'Jane' },
+ * ];
  *
- * arrayOf(data, "name"); // ["John", "Jane"]
+ * arrayOf(data, "complex"); // [{ value: 'x' }, { value: 'y' }]
  * arrayOf(data, "id"); // [1, 2]
+ * arrayOf(data, "name"); // ["John", "Jane"]
  * ```
  */
 export const arrayOf = <T extends unknown, K extends keyof T>(

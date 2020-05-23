@@ -28,10 +28,14 @@ between them.</p>
 
 **Example**  
 ```ts
-const data = [{ name: "John", id: 1 }, { name: "Jane", id: 2 }];
+const data = [
+  { complex: { value: 'x' }, id: 1, name: 'John' },
+  { complex: { value: 'y' }, id: 2, name: 'Jane' },
+];
 
-arrayOf(data, "name"); // ["John", "Jane"]
+arrayOf(data, "complex"); // [{ value: 'x' }, { value: 'y' }]
 arrayOf(data, "id"); // [1, 2]
+arrayOf(data, "name"); // ["John", "Jane"]
 ```
 <a name="sumOf"></a>
 
