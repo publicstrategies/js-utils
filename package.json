@@ -6,6 +6,11 @@
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build-docs"
+    }
+  },
   "scripts": {
     "start": "rollup --config rollup.config.js --watch",
     "test": "jest",
@@ -17,8 +22,7 @@
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit",
     "validate": "npm run lint && npm run tsc",
-    "prepublishOnly": "npm run validate",
-    "pre-commit": "npm run build-docs"
+    "prepublishOnly": "npm run validate"
   },
   "keywords": [
     "javascript",
