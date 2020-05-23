@@ -6,11 +6,6 @@
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build-docs"
-    }
-  },
   "scripts": {
     "start": "rollup --config rollup.config.js --watch",
     "test": "jest",
@@ -18,7 +13,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:watch:coverage": "jest --watch --coverage",
-    "build-docs": "jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md",
+    "build-docs": "bash scripts/docs.sh",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit",
     "validate": "npm run lint && npm run tsc && npm run test",
