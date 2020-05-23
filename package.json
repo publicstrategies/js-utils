@@ -11,7 +11,9 @@
     "test:watch:coverage": "jest --watch --coverage"
   },
   "keywords": [],
-  "author": "",
+  "contributors": [
+    "Chris Vandenberg <chris@altruisticsoftware.com>"
+  ],
   "license": "ISC",
   "prettier": "@psdevs/prettier-config",
   "eslintConfig": {
