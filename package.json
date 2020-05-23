@@ -13,16 +13,16 @@
   },
   "scripts": {
     "start": "rollup --config rollup.config.js --watch",
-    "test": "jest",
-    "test-ci": "jest --coverage && coveralls < coverage/lcov.info",
+    "test": "jest --coverage && coveralls < coverage/lcov.info",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:watch:coverage": "jest --watch --coverage",
     "build-docs": "jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit",
-    "validate": "npm run lint && npm run tsc",
-    "prepublishOnly": "npm run validate"
+    "validate": "npm run lint && npm run tsc && npm run test",
+    "preversion": "npm run validate && npm run build-docs",
+    "prepublishOnly": "npm run validate && npm run build-docs"
   },
   "keywords": [
     "javascript",
