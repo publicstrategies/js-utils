@@ -17,8 +17,8 @@
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "tsc": "./node_modules/typescript/bin/tsc --noEmit",
     "validate": "npm run lint && npm run tsc && npm run test",
-    "preversion": "npm run validate && npm run build-docs",
-    "prepublishOnly": "npm run validate && npm run build-docs"
+    "preversion": "npm run validate",
+    "prepublishOnly": "npm run validate"
   },
   "keywords": [
     "javascript",
