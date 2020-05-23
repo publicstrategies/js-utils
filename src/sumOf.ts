@@ -31,16 +31,17 @@ const bySum = <
 /**
  * Takes an array of any objects and recursively adds a shallow or complex
  * property shared between them.
- * ```ts
- * const data = [{ nested: { value: 12 } }, { nested: { value: 34 } }];
- *
- * sumOf(data, "nested", "value"); // 46
- * ```
  * @param {any[]} array The array of objects with a shared shallow or nested
  * property.
  * @param {...string} keys The property accessor(s) for the objects in the
  * array.
  * @returns {number}
+ * @example
+ * ```ts
+ * const data = [{ nested: { value: 12 } }, { nested: { value: 34 } }];
+ *
+ * sumOf(data, "nested", "value"); // 46
+ * ```
  */
 export const sumOf = <
   T,
