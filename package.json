@@ -3,15 +3,29 @@
   "version": "1.0.0",
   "description": "Some handy javascript utilities we use.",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "rollup --config rollup.config.js --watch",
     "test": "jest",
+    "test-ci": "jest --coverage && coveralls < coverage/lcov.info",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:watch:coverage": "jest --watch --coverage",
-    "build:doc": "jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md"
+    "build:doc": "jsdoc2md --files src/**/*.ts --configure ./jsdoc2md.json | sed '/\\*\\*Kind\\*\\*/d' > README.md",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
+    "tsc": "./node_modules/typescript/bin/tsc --noEmit",
+    "validate": "npm run lint && npm run tsc",
+    "prepublishOnly": "npm run validate"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "utilities",
+    "utils",
+    "frontend"
+  ],
   "contributors": [
     "Chris Vandenberg <chris@altruisticsoftware.com>"
   ],
@@ -37,6 +51,7 @@
     "@psdevs/eslint-config": "^2.0.0",
     "@psdevs/prettier-config": "^1.0.4",
     "@types/jest": "^25.2.3",
+    "coveralls": "^3.1.0",
     "jest": "^26.0.1",
     "jsdoc-babel": "^0.5.0",
     "jsdoc-to-markdown": "^5.0.3",

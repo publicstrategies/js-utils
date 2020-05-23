@@ -1,0 +1,15 @@
+language: node_js
+
+os:
+  - linux
+
+node_js:
+  - 'stable'
+
+cache:
+  directories:
+    - node_modules
+
+script:
+  - npm run validate
+  - npm run test-ci
