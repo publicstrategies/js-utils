@@ -8,9 +8,6 @@ node_js:
 
 if: type = pull_request
 
-notifications:
-  slack: publicstrategiesgroup:SIDj5XVLcpknbHdCue6JA4nJ
-
 cache:
   directories:
     - node_modules

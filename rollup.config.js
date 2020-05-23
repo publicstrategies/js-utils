@@ -1,15 +1,19 @@
 // @ts-check
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import glob from 'glob';
+
+const INCLUDE = 'src/**/*.ts';
+const EXCLUDE = 'src/**/*.spec.ts';
 
 /** @type {import('rollup').RollupOptions} */
 const config = {
-  input: './src/index.ts',
+  input: glob.sync(INCLUDE, { ignore: EXCLUDE }),
   plugins: [
     typescript({
       tsconfigOverride: {
-        exclude: ['src/**/*.spec.ts'],
-        include: ['src/**/*.ts'],
+        exclude: [EXCLUDE],
+        include: [INCLUDE],
         compilerOptions: {
           declaration: true,
         },

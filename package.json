@@ -2,7 +2,8 @@
   "name": "@psdevs/js-utils",
   "version": "1.0.1",
   "description": "Some handy javascript utilities we use 👨‍💻👩‍💻",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -54,6 +55,7 @@
     "@psdevs/prettier-config": "^1.0.4",
     "@types/jest": "^25.2.3",
     "coveralls": "^3.1.0",
+    "glob": "^7.1.6",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jsdoc-babel": "^0.5.0",
