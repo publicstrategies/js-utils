@@ -1,4 +1,4 @@
-import { arrayOf } from './arrayOf';
+import { pluck } from './pluck';
 
 const data = [
   { complex: { value: 'x' }, id: 1, name: 'John' },
@@ -6,15 +6,15 @@ const data = [
 ];
 
 test('numbers', () => {
-  expect(arrayOf(data, 'id')).toStrictEqual([1, 2]);
+  expect(pluck(data, 'id')).toStrictEqual([1, 2]);
 });
 
 test('strings', () => {
-  expect(arrayOf(data, 'name')).toStrictEqual(['John', 'Jane']);
+  expect(pluck(data, 'name')).toStrictEqual(['John', 'Jane']);
 });
 
 test('complex objects', () => {
-  expect(arrayOf(data, 'complex')).toStrictEqual([
+  expect(pluck(data, 'complex')).toStrictEqual([
     { value: 'x' },
     { value: 'y' },
   ]);

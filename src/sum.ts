@@ -40,10 +40,10 @@ const bySum = <
  * ```ts
  * const data = [{ nested: { value: 12 } }, { nested: { value: 34 } }];
  *
- * sumOf(data, "nested", "value"); // 46
+ * sum(data, "nested", "value"); // 46
  * ```
  */
-export const sumOf = <
+export const sum = <
   T,
   K1 extends keyof T,
   K2 extends keyof T[K1],

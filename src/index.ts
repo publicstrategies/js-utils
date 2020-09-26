@@ -1,2 +1,2 @@
-export { arrayOf } from './arrayOf';
-export { sumOf } from './sumOf';
+export { pluck } from './pluck';
+export { sum } from './sum';

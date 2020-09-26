@@ -1,9 +1,9 @@
-import { sumOf } from './sumOf';
+import { sum } from './sum';
 
 test('shallow objects', () => {
   const data = [{ value: 1 }, { value: 1 }];
 
-  expect(sumOf(data, 'value')).toStrictEqual(2);
+  expect(sum(data, 'value')).toStrictEqual(2);
 });
 
 test('complex objects', () => {
@@ -12,5 +12,5 @@ test('complex objects', () => {
     { value: { nested: { nestedAgain: 1 } } },
   ];
 
-  expect(sumOf(data, 'value', 'nested', 'nestedAgain')).toStrictEqual(2);
+  expect(sum(data, 'value', 'nested', 'nestedAgain')).toStrictEqual(2);
 });
